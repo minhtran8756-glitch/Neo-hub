@@ -1393,7 +1393,7 @@ RunService.Heartbeat:Connect(function()
                         end
                     end
 
-                    if not shouldParry and (ParryMethod == "Lunge" or ParryMethod == "Combined") and dist <= 15 then
+                    if not shouldParry and (ParryMethod == "Lunge" or ParryMethod == "Combined") and dist <= ParryDistance then
                         for _, track in ipairs(killerHum:GetPlayingAnimationTracks()) do
                             local id = tonumber(string.match(track.Animation.AnimationId or "", "%d+"))
                             if id and lungeanims[id] then
