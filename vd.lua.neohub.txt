@@ -154,7 +154,7 @@ local guiSC = Instance.new("ScreenGui")
 guiSC.ResetOnSpawn = false
 if gethui then guiSC.Parent = gethui() elseif game:GetService("CoreGui") then guiSC.Parent = game:GetService("CoreGui") end
 local btn = Instance.new("ImageButton", guiSC)
-btn.Image = "rbxassetid://76795587249996"
+btn.Image = "rbxassetid://95850217708736"
 btn.Size = UDim2.new(0, 40, 0, 40)
 btn.Position = UDim2.new(0.5, 0, 0.4, 0)
 btn.AnchorPoint = Vector2.new(0.5, 0.5)
