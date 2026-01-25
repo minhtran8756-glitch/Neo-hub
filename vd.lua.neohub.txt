@@ -120,7 +120,7 @@ print("Loaded!\nNeoHUB By Minh\nDiscord: https://discord.gg/.......")
 
 WindUI:SetNotificationLower(true)
 local Window = WindUI:CreateWindow({
-    Title = " Hub | Violence District",
+    Title = " Neo Hub | Violence District",
     Author = "discord.gg/......",
     Folder = "ViolenceDistrictHub",
     Size = UDim2.fromOffset(500, 300),
