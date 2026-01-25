@@ -113,14 +113,14 @@ if success and rankName then
         return 
     end
 else
-    warn("[ARKHUB] Failed to fetch group rank (HTTP Error), continuing...")
+    warn("[NeoHUB] Failed to fetch group rank (HTTP Error), continuing...")
 end
 
-print("Loaded!\nARKHUB By Minh\nDiscord: https://discord.gg/.......")
+print("Loaded!\nNeoHUB By Minh\nDiscord: https://discord.gg/.......")
 
 WindUI:SetNotificationLower(true)
 local Window = WindUI:CreateWindow({
-    Title = "Ark Hub | Violence District",
+    Title = " Hub | Violence District",
     Author = "discord.gg/......",
     Folder = "ViolenceDistrictHub",
     Size = UDim2.fromOffset(500, 300),
@@ -143,7 +143,7 @@ Window:Tag({
     Radius = 16,
 })
 Window:EditOpenButton({
-    Title = "Open Ark hub " .. getTag(lp.Name),
+    Title = "Open Neo Hub " .. getTag(lp.Name),
     CornerRadius = UDim.new(0,16),
     StrokeThickness = 2,
     OnlyMobile = true,
@@ -192,7 +192,7 @@ end)
 Window:OnDestroy(function()
     btn.Visible = false
 end)
-if not game.UserInputService.TouchEnabled then WindUI:Notify({ Title = "Ark Hub", Content = "Use 'K' Button To Toggle UI.", Icon = "info", Duration = 3 }) end
+if not game.UserInputService.TouchEnabled then WindUI:Notify({ Title = "Neo Hub", Content = "Use 'K' Button To Toggle UI.", Icon = "info", Duration = 3 }) end
 
 Window:CreateTopbarButton("theme-switcher", "moon", function()
     WindUI:SetTheme(WindUI:GetCurrentTheme() == "Dark" and "Light" or "Dark")
@@ -1936,8 +1936,8 @@ local UPlaySection = TabHandles.Universal:Section({
     Icon = "joystick"
 })
 Toggles.AutoPlayHandle = UPlaySection:Toggle({
-   Title =  "Auto Play (AI, BETA)",
-   Desc = "Automatically plays for you, will be improving further.",
+   Title =  "Auto Play (BETA)",
+   Desc = "Automatically plays for you, will be improving further(tự động chơi)",
    Value = false,
    Callback = function(state)
        getgenv().AIPlaying = state
@@ -1949,7 +1949,7 @@ Toggles.AutoPlayHandle = UPlaySection:Toggle({
 UPlaySection:Divider()
 Toggles.RunHandle = UPlaySection:Toggle({
    Title =  "Auto Run (BETA)",
-   Desc = "Runs from killer if he's close and you're survivor.",
+   Desc = "Runs from killer if he's close and you're survivor(tự động chạy)",
    Value = false,
    Callback = function(state)
        getgenv().settings.Methods.Run = state
@@ -1957,7 +1957,7 @@ Toggles.RunHandle = UPlaySection:Toggle({
 })
 Toggles.FarmHandle = UPlaySection:Toggle({
    Title =  "Auto Farm (BETA)",
-   Desc = "Farms generators if you're survivor, survivors if you're killer.",
+   Desc = "Farms generators if you're survivor, survivors if you're killer(tự động đi sửa điện)",
    Value = false,
    Callback = function(state)
        getgenv().settings.Methods.Farm = state
@@ -1965,7 +1965,7 @@ Toggles.FarmHandle = UPlaySection:Toggle({
 })
 Toggles.LoopHandle = UPlaySection:Toggle({
    Title =  "Auto Loop (BETA)",
-   Desc = "Loops killer if you're survivor.",
+   Desc = "Loops killer if you're survivor",
    Value = false,
    Callback = function(state)
        getgenv().settings.Methods.Farm = state
@@ -1973,7 +1973,7 @@ Toggles.LoopHandle = UPlaySection:Toggle({
 })
 Toggles.WallHugHandle = UPlaySection:Toggle({
    Title =  "Wall Hug",
-   Desc = "Hugs wall while running/farming/looping.",
+   Desc = "Hugs wall while running/farming/looping(tổng hợp)",
    Value = false,
    Callback = function(state)
        getgenv().settings.Toggles.Wallhug = state
@@ -2069,7 +2069,7 @@ local KillerSection = TabHandles.Killer:Section({
 })
 Toggles.OneTapHandle = KillerSection:Toggle({
        Title = "Damage Aura",
-       Desc = "Throws cycles of hits at the location you're facing.",
+       Desc = "Throws cycles of hits at the location you're facing(đòn đánh liên hoàn)",
        Value = false,
        Callback = function(state)
              DamageAura = state
@@ -2081,7 +2081,7 @@ Toggles.OneTapHandle = KillerSection:Toggle({
 KillerSection:Divider()
 Toggles.AutoAimChargedHandle = KillerSection:Toggle({
        Title = "Auto Aim Charged Spear (Veil)",
-       Desc = "Automatically aims charged spear to the closest survivor. YOU MUST BE HOLDING SPEAR DONT FUCKING BUG REPORT",
+       Desc = "Automatically aims charged spear to the closest survivor(tự động aim giáo đã tụ lực)",
        Value = false,
        Callback = function(state)
              AutoAimChargedToggle = state
@@ -2093,7 +2093,7 @@ Toggles.AutoAimChargedHandle = KillerSection:Toggle({
 })
 Toggles.AutoAimNormalHandle = KillerSection:Toggle({
        Title = "Auto Aim Spear (Veil)",
-       Desc = "Automatically aims spear to the closest survivor. YOU MUST BE HOLDING SPEAR DONT FUCKING BUG REPORT",
+       Desc = "Automatically aims spear to the closest survivor(tự động aim giáo thường)",
        Value = false,
        Callback = function(state)
              AutoAimNormalToggle = state
@@ -2109,24 +2109,24 @@ local KillerMiscSection = TabHandles.Killer:Section({
     Icon = "syringe"
 })
 Toggles.AntiFlashlightHandle = KillerMiscSection:Toggle({
-       Title = "Anti Flashlight",
-       Desc = "Removes flashlight brightness.",
+       Title = "Anti Flashlight(Beta)",
+       Desc = "Removes flashlight brightness(không bị đèn pin chiếu sáng)",
        Value = false,
        Callback = function(state)
              AntiFlashlight = state
        end
 })
 Toggles.AntiSlowHandle = KillerMiscSection:Toggle({
-       Title = "Anti Slow Down",
-       Desc = "Removes negative walk speed effects.",
+       Title = "Anti Slow Down(Beta)",
+       Desc = "Removes negative walk speed effects(không bị giảm tốc độ)",
        Value = false,
        Callback = function(state)
              AntislowToggle = state
        end
 })
 Toggles.NoStunHandle = KillerMiscSection:Toggle({
-    Title = "No Stun",
-    Desc = "Removes falling negative effects.",
+    Title = "No Stun(Beta",
+    Desc = "Removes falling negative effects(không bị choáng)",
     Value = false,
     Callback = function(state)
         NoStunToggle = state 
@@ -2188,7 +2188,7 @@ Toggles.GodModeHandle = SurvSection:Toggle({
 })
 Toggles.AutoShootHandle = SurvSection:Toggle({
        Title = "Auto Attack",
-       Desc = "Automatically aims to target and shoots him, must have revolver/flashlight and target must be in FOV.",
+       Desc = "Automatically aims to target and shoots him, must have revolver/flashlight and target must be in FOV(tự động nhắm)",
        Value = false,
        Callback = function(state)
              Autoshoot = state
@@ -2216,7 +2216,7 @@ local SurvDefSection = TabHandles.Survivor:Section({
 })
 Toggles.AutoParryHandle = SurvDefSection:Toggle({
        Title = "Auto Parry Killer",
-       Desc = "Automatically stuns killer parrying him, must have parrying dagger as survivor.",
+       Desc = "Automatically stuns killer parrying him, must have parrying dagger as survivor(tự động đỡ đòn bằng kiếm)",
        Value = false,
        Callback = function(state)
              Autoparry = state
@@ -2224,7 +2224,7 @@ Toggles.AutoParryHandle = SurvDefSection:Toggle({
 })
 Toggles.ParrySliderHandle = SurvDefSection:Slider({
        Title = "Parry Radius",
-       Desc = "Modify the radius of auto parry.",
+       Desc = "Modify the radius of auto parry(khoảng cách đỡ đòn)",
 	Value = { Min = 5, Max = 30, Default = 10 },
 	Callback = function(Value)
 		ParryDistance = tonumber(Value)
@@ -2232,8 +2232,8 @@ Toggles.ParrySliderHandle = SurvDefSection:Slider({
 })
 Toggles.ParryMethodHandle = SurvDefSection:Dropdown({
        Title =  "Parry Method",
-       Desc = "Choose auto parry method.",
-       Values = { "Combined", "Lunge", "Attack (BETA)" },
+       Desc = "Choose auto parry method(chế độ đỡ đòn)",
+       Values = { "Combined", "Lunge", "Attack" },
        Value = "Lunge",
        Multi = false,
        AllowNone = false,
@@ -2243,7 +2243,7 @@ Toggles.ParryMethodHandle = SurvDefSection:Dropdown({
 })
 Toggles.UnhookAuraHandle = SurvDefSection:Toggle({
     Title = "Unhook Aura",
-    Desc = "Unhooks hooked players when you're close.",
+    Desc = "Unhooks hooked players when you're close(tự động giải cứu người cắm trên gai khi ở gần)",
     Value = false,
     Callback = function(state)
         UnhookAuraToggle = state 
@@ -2274,12 +2274,12 @@ mt.__namecall = newcclosure(function(self, ...)
 end)
 setreadonly(mt, true)
 else
-warn("[AzureHub] Executor does not support metatable hooking (getrawmetatable, setreadonly). NoFall Bypass Skipped.")
+warn("[NeoHub] Executor does not support metatable hooking (getrawmetatable, setreadonly). NoFall Bypass Skipped.")
 end
 
 Toggles.NoFallHandle = SurvDefSection:Toggle({
     Title = "No Fall",
-    Desc = "Removes falling negative effects.",
+    Desc = "Removes falling negative effects(không bị làm chậm khi rơi)",
     Value = false,
     Callback = function(state)
         getgenv().NoFallToggle = state 
@@ -2288,7 +2288,7 @@ Toggles.NoFallHandle = SurvDefSection:Toggle({
 SurvDefSection:Divider()
 Toggles.AutoDropHandle = SurvDefSection:Toggle({
        Title = "Auto Drop Pallete",
-       Desc = "Drops pallete right to killer, must be near.",
+       Desc = "Drops pallete right to killer, must be near(tự động thả ván gỗ khi killer lại gần)",
        Value = false,
        Callback = function(state)
              AutoDropToggle = state
@@ -2297,7 +2297,7 @@ Toggles.AutoDropHandle = SurvDefSection:Toggle({
 })
 Toggles.AutoDropSetHandle = SurvDefSection:Toggle({
        Title = "Pallet Works On Carry?",
-       Desc = "Drops pallete even if killer is carrying you and passing after pallet.",
+       Desc = "Drops pallete even if killer is carrying you and passing after pallet(tự động thả ván gỗ khi đang bị Killer bế)",
        Value = false,
        Callback = function(state)
              AutoDropSetToggle = state
@@ -2310,7 +2310,7 @@ local SurvMiscSection = TabHandles.Survivor:Section({
 })
 Toggles.PerfectGenHandle = SurvMiscSection:Toggle({
     Title = "Auto Perfect Generator",
-    Desc = "Does generator skill check at perfect spot.",
+    Desc = "Does generator skill check at perfect spot(tự động sửa điện không bị fall)",
     Value = false,
     Callback = function(state)
         if state then
@@ -2325,7 +2325,7 @@ Toggles.PerfectGenHandle = SurvMiscSection:Toggle({
 })
 Toggles.PerfectHealHandle = SurvMiscSection:Toggle({
     Title = "Auto Perfect Heal",
-    Desc = "Does heal skill check at perfect spot.",
+    Desc = "Does heal skill check at perfect spot(tự động chữa lành không bị fall)",
     Value = false,
     Callback = function(state)
         if state then
@@ -2341,7 +2341,7 @@ Toggles.PerfectHealHandle = SurvMiscSection:Toggle({
 SurvMiscSection:Divider()
 Toggles.AntiGFailHandle = SurvMiscSection:Toggle({
        Title = "Anti Fail Generator",
-       Desc = "Failing generator skill check will not do anything.",
+       Desc = "Failing generator skill check will not do anything(vô hiệu hóa nổ máy phát điện)",
        Value = false,
        Callback = function(state)
              AntiGFail = state
@@ -2349,7 +2349,7 @@ Toggles.AntiGFailHandle = SurvMiscSection:Toggle({
 })
 Toggles.RemoveClothingsHandle = SurvMiscSection:Toggle({
        Title = "Remove Veil Clothings",
-       Desc = "Nakes veil killer.",
+       Desc = "Nakes veil killer(the veil không quần áo 🌚),
        Value = false,
        Callback = function(state)
              RemoveClothingsToggle = state
@@ -2399,7 +2399,7 @@ RunService.RenderStepped:Connect(function()
 end)
 Toggles.FOVSliderHandle = TabHandles.Esp:Slider({
        Title = "FOV Radius",
-       Desc = "Modify the radius of FOV.",
+       Desc = "Modify the radius of FOV(tăng góc nhìn)",
 	Value = { Min = 1, Max = 120, Default = 70 },
 	Callback = function(Value)
 		FOVRadius = tonumber(Value)
@@ -2469,7 +2469,7 @@ Toggles.ESPStudsHandle = TabHandles.Esp:Toggle({
 
 Toggles.NoclipHandle = TabHandles.Player:Toggle({
 	Title = "Noclip",
-	Desc = "Pass through walls with this toggle on.",
+	Desc = "Pass through walls with this toggle on(đi xuyên tường)",
 	Value = false,
 	Callback = function(state)
 		NoclipToggle = state
@@ -2482,7 +2482,7 @@ Toggles.NoclipHandle = TabHandles.Player:Toggle({
 })
 Toggles.WsToggleHandle = TabHandles.Player:Toggle({
 	Title = "WalkSpeed Changer",
-	Desc = "Set your speed to your preference.",
+	Desc = "Set your speed to your preference(tăng tốc độ)",
 	Value = false,
 	Callback = function(state)
 		WalkToggle = state
