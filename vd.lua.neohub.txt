@@ -2349,7 +2349,7 @@ Toggles.AntiGFailHandle = SurvMiscSection:Toggle({
 })
 Toggles.RemoveClothingsHandle = SurvMiscSection:Toggle({
        Title = "Remove Veil Clothings",
-       Desc = "Nakes veil killer(the veil không quần áo 🌚),
+       Desc = "Nakes veil killer(the veil không quần áo 🌚)",
        Value = false,
        Callback = function(state)
              RemoveClothingsToggle = state
