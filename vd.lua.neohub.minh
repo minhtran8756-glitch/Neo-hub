@@ -222,7 +222,7 @@ Config = Tabs.Utilities:Tab({ Title = "|  Configuration", Icon = "settings" })
 }
 
 local updparagraph = Logs:Paragraph({
-    Title = "Update Logs",
+    Title = "Update script",
     Desc = ".....",
     Locked = false,
     Buttons = {
@@ -1985,18 +1985,18 @@ local KillerBlatantSection = TabHandles.Killer:Section({
     Icon = "fan"
 })
 Toggles.InfThingsHandle = KillerBlatantSection:Toggle({
-    Title = "Infinite Abilities " .. (getTag(lp.Name) == "[ FREEMIUM ]" and "(PREMIUM)" or ""),
+    Title = "Infinite Abilities " .. (getTag(lp.Name) == "[ ⚔️ ]" and "(⚔️)" or ""),
     Desc = "Includes no attack cooldown. Supported killers for inf abillities: Slasher, Masked, Veil, Stalker.",
     Value = false,
     Callback = function(state)
         if state then
             if getgenv().PREMIUM_KEY then
-                InfThingsToggle = true
+                InfThingsToggle = false
             else
                 InfThingsToggle = false
                 WindUI:Notify({
                     Title = "Premium Feature",
-                    Content = "This feature is only for premium users, get premium in our discord server.",
+                    Content = "...............",
                     Icon = "info",
                     Duration = 3
                 })
