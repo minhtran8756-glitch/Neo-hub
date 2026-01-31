@@ -1502,6 +1502,7 @@ RunService.Heartbeat:Connect(function()
                     end
                     
                     if shouldParry then
+                        task.wait(0.2) 
                         if not (character:GetAttribute("IsHooked") or character:GetAttribute("IsCarried")) then
                             game.ReplicatedStorage.Remotes.Items["Parrying Dagger"].parry:FireServer()
                             if game.UserInputService.TouchEnabled then
